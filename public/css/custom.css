@@ -195,3 +195,7 @@ table.dataTable thead .sorting_desc {
     color: #fff;
     background: #151b3f;
 }
+.btn-primary{
+    background: #29305D !important;
+    border-color: #29305D;
+}

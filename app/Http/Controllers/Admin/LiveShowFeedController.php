@@ -60,11 +60,13 @@ class LiveShowFeedController extends Controller
     public function update(UpdateLiveShowFeedRequest $request, LiveShowFeed $liveShowFeed)
     {
 
-        $liveShowFeed->update($request->all());
+        $liveShowFeed->update($request->validated());
 
 
-        return redirect()->route('admin.live-show-feeds.index');
+        return redirect()->route('admin.live-show-feeds.index')
+            ->with('success', 'Live Show Feed updated successfully.');
     }
+
 
     public function show(LiveShowFeed $liveShowFeed)
     {
