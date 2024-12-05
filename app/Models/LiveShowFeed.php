@@ -40,7 +40,7 @@ class LiveShowFeed extends Model
         'Monday'    => 'Monday',
         'Tuesday'   => 'Tuesday',
         'Wednesday' => 'Wednesday',
-        'Thrusday'  => 'Thrusday',
+        'Thursday'  => 'Thursday',
         'Friday'    => 'Friday',
         'Saturday'  => 'Saturday',
     ];
