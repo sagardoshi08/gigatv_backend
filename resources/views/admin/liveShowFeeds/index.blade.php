@@ -41,6 +41,12 @@
                             {{ trans('cruds.liveShowFeed.fields.end_time') }}
                         </th>
                         <th>
+                            live Url
+                        </th>
+                        <th>
+                            Group Id
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -68,6 +74,12 @@
                             </td>
                             <td>
                                 {{ $liveShowFeed->end_time ?? '' }}
+                            </td>
+                            <td>
+                                {{ $liveShowFeed->live_url ?? '' }}
+                            </td>
+                            <td>
+                                {{ $liveShowFeed->group_id ?? '' }}
                             </td>
                             <td>
                                 @can('live_show_feed_show')
@@ -148,7 +160,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

@@ -31,15 +31,22 @@ class LiveShowFeedController extends Controller
     public function store(StoreLiveShowFeedRequest $request)
     {
 
+
         $start_time = $request->start_time; // data sand
         $end_time = $request->end_time;
+        $live_url = $request->live_url;
+        $group_id = $request->group_id;
 
         $data = $request->all(); //request all
 
+
         $data['start_time'] = $start_time;
         $data['end_time'] = $end_time;
+        $data['live_url'] = $live_url;
+        $data['group_id'] = $group_id;
 
-        $data = $request->validated();//validation
+
+        // $data = $request->validated();//validation
 
         $liveShowFeed = LiveShowFeed::create($data);
 
@@ -60,8 +67,8 @@ class LiveShowFeedController extends Controller
     public function update(UpdateLiveShowFeedRequest $request, LiveShowFeed $liveShowFeed)
     {
 
-        $liveShowFeed->update($request->validated());
 
+        $liveShowFeed->update($request->all());
 
         return redirect()->route('admin.live-show-feeds.index')
             ->with('success', 'Live Show Feed updated successfully.');

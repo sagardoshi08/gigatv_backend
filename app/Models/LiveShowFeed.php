@@ -30,6 +30,8 @@ class LiveShowFeed extends Model
         'day',
         'start_time',
         'end_time',
+        'live_url',
+        'group_id',
         'created_at',
         'updated_at',
         'deleted_at',

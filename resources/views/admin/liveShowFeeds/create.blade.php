@@ -50,7 +50,7 @@
                 <span class="help-block">{{ trans('cruds.liveShowFeed.fields.day_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="start_time">{{ trans('cruds.liveShowFeed.fields.start_time') }}</label>
+                <label  class="required" for="start_time">{{ trans('cruds.liveShowFeed.fields.start_time') }}</label>
                 <input class="form-control timepicker {{ $errors->has('start_time') ? 'is-invalid' : '' }}" type="text" name="start_time" id="start_time" value="{{ old('start_time') }}">
                 @if($errors->has('start_time'))
                     <div class="invalid-feedback">
@@ -60,7 +60,7 @@
                 <span class="help-block">{{ trans('cruds.liveShowFeed.fields.start_time_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="end_time">{{ trans('cruds.liveShowFeed.fields.end_time') }}</label>
+                <label class="required" for="end_time">{{ trans('cruds.liveShowFeed.fields.end_time') }}</label>
                 <input class="form-control timepicker {{ $errors->has('end_time') ? 'is-invalid' : '' }}" type="text" name="end_time" id="end_time" value="{{ old('end_time') }}">
                 @if($errors->has('end_time'))
                     <div class="invalid-feedback">
@@ -68,6 +68,27 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.liveShowFeed.fields.end_time_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="live_url">Live URL</label>
+                <input class="form-control {{ $errors->has('live_url') ? 'is-invalid' : '' }}"
+                       type="url" name="live_url" id="live_url" value="{{ old('live_url') }}" required>
+                @if($errors->has('live_url'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('live_url') }}
+                    </div>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="group_id">Group ID</label>
+                <input class="form-control {{ $errors->has('group_id') ? 'is-invalid' : '' }}"
+                       type="number" name="group_id" id="group_id" value="{{ old('group_id') }}" required>
+                @if($errors->has('group_id'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('group_id') }}
+                    </div>
+                @endif
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

@@ -71,6 +71,27 @@
                 <span class="help-block">{{ trans('cruds.liveShowFeed.fields.end_time_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="live_url">Live URL</label>
+                <input class="form-control {{ $errors->has('live_url') ? 'is-invalid' : '' }}"
+                       type="url" name="live_url" id="live_url" value="{{ old('live_url', $liveShowFeed->live_url) }}">
+                @if($errors->has('live_url'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('live_url') }}
+                    </div>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="group_id">Group ID</label>
+                <input class="form-control {{ $errors->has('group_id') ? 'is-invalid' : '' }}"
+                       type="number" name="group_id" id="group_id" value="{{ old('group_id',$liveShowFeed->group_id) }}" required>
+                @if($errors->has('group_id'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('group_id') }}
+                    </div>
+                @endif
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

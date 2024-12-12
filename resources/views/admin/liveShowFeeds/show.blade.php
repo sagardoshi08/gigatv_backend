@@ -63,6 +63,22 @@
                             {{ $liveShowFeed->end_time }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            live Url
+                        </th>
+                        <td>
+                            {{ $liveShowFeed->live_url }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Group Id
+                        </th>
+                        <td>
+                            {{ $liveShowFeed->group_id }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">
