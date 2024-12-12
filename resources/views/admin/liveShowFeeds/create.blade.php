@@ -72,7 +72,7 @@
             <div class="form-group">
                 <label class="required" for="live_url">Live URL</label>
                 <input class="form-control {{ $errors->has('live_url') ? 'is-invalid' : '' }}"
-                       type="url" name="live_url" id="live_url" value="{{ old('live_url') }}" required>
+                       type="text" name="live_url" id="live_url" value="{{ old('live_url') }}" required>
                 @if($errors->has('live_url'))
                     <div class="invalid-feedback">
                         {{ $errors->first('live_url') }}
